@@ -2,7 +2,9 @@ package code.name.monkey.appthemehelper
 
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 
 /**
  * @author Aidan Follestad (afollestad), Karim Abou Zeid (kabouzeid)
@@ -11,9 +13,11 @@ open class ATHActivity : AppCompatActivity() {
 
     private var updateTime: Long = -1
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         updateTime = System.currentTimeMillis()
+
     }
 
     override fun onResume() {
@@ -30,6 +34,6 @@ open class ATHActivity : AppCompatActivity() {
     fun postRecreate() {
         // hack to prevent java.lang.RuntimeException: Performing pause of activity that is not resumed
         // makes sure recreate() is called right after and not in onResume()
-        Handler().post { recreate() }
+        Handler(Looper.getMainLooper()).post { recreate() }
     }
 }
