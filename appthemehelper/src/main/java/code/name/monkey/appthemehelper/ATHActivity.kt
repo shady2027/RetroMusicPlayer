@@ -2,9 +2,8 @@ package code.name.monkey.appthemehelper
 
 import android.os.Bundle
 import android.os.Handler
-import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
+
 
 /**
  * @author Aidan Follestad (afollestad), Karim Abou Zeid (kabouzeid)
