@@ -34,6 +34,6 @@ open class ATHActivity : AppCompatActivity() {
     fun postRecreate() {
         // hack to prevent java.lang.RuntimeException: Performing pause of activity that is not resumed
         // makes sure recreate() is called right after and not in onResume()
-        Handler(Looper.getMainLooper()).post { recreate() }
+        Handler().post { recreate() }
     }
 }
